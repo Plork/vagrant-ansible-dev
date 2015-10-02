@@ -43,6 +43,4 @@ Temporary Items
 .apdisk
 
 # Vagrant stuff
-acceptance_config.yml
-boxes/*
-.vagrant/*
+.vagrant/
