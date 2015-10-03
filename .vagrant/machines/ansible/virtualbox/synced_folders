@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant/ansible":{"mount_options":["dmode=777","fmode=666"],"guestpath":"/home/vagrant/ansible","hostpath":"C:/vagrant/ansible-dev/ansible","disabled":false}}}
