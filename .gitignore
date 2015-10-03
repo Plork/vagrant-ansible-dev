@@ -45,3 +45,4 @@ Temporary Items
 # Vagrant stuff
 .vagrant
 .vagrant/*
+boxes

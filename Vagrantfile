@@ -41,7 +41,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :server2012  do |server2012|
 
-    server2012.vm.box = "opentable/win-2012r2-standard-amd64-nocm"
+    server2012.vm.box = "boxes/windows2012r2min-wmf5-virtualbox.box"
     server2012.vm.network "private_network",
       ip: "192.168.56.11"
     server2012.vm.hostname = "server2012"
