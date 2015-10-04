@@ -65,7 +65,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     server2012.vm.synced_folder "dsc/", "/dsc"
 
     server2012.vm.provision :shell, path: "provision/Configure-RemotingForAnsible.ps1"
-    server2012.vm.provision :shell, inline: "choco upgrade vboxguestadditions.install -y"
+    server2012.vm.provision :shell, inline: "cinst install vboxguestadditions.install -y -source https://www.myget.org/F/jmonsorno-choco/api/v2"
   end
 
 end
