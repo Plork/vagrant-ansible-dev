@@ -1,8 +1,8 @@
 ---
 - hosts: windows
+  gather_facts: false
   tasks:
-  - name: Telnet Client
-    win_dsc5:
-      resource_name =  'WindowsFeature'
-      ensure = 'Present'
-      item_name =  "Web-server"
+    - name: install jre8
+      win_chocolatey:
+        name: jre8
+        state: present

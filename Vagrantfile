@@ -41,7 +41,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :server2012  do |server2012|
 
-    server2012.vm.box = "boxes/windows2012r2min-wmf5-virtualbox.box"
+    server2012.vm.box = "boxes/windows2012r2min-virtualbox.box"
     server2012.vm.network "private_network",
       ip: "192.168.56.11"
     server2012.vm.hostname = "server2012"
@@ -56,7 +56,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     server2012.winrm.max_tries = 20
 
     server2012.vm.provider "virtualbox" do |vb|
-      #vb.gui = true
+      vb.gui = true
       vb.name = "server2012"
       vb.memory = 1024
     end
@@ -64,8 +64,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     server2012.vm.synced_folder "./", "/vagrant", disabled: true
     server2012.vm.synced_folder "dsc/", "/dsc"
 
-    server2012.vm.provision :shell, path: "provision/Configure-RemotingForAnsible.ps1"
-    server2012.vm.provision :shell, inline: "cinst install vboxguestadditions.install -y -source https://www.myget.org/F/jmonsorno-choco/api/v2"
+    server2012.vm.provision :shell, path: "./provision/Configure-RemotingForAnsible.ps1"
+    #server2012.vm.provision :shell, inline: "cinst install vboxguestadditions.install -y -source https://www.myget.org/F/jmonsorno-choco/api/v2"
   end
 
 end
