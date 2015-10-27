@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 VAGRANTFILE_API_VERSION = "2"
-LOCAL_HTTP_PROXY = 'http://proxy.binckbank.nv:8080'
+LOCAL_HTTP_PROXY = 'http://proxy:8080'
 
 #require './vagrant-provision-reboot-plugin'
 
